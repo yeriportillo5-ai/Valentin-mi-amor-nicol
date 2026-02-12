@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Para Josue ❤️</title>
+
+<style>
+
+body{
+margin:0;
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background:linear-gradient(135deg,#ff758c,#ff7eb3);
+overflow:hidden;
+font-family: 'Segoe UI';
+}
+
+/* corazones flotando */
+
+.heart{
+position:absolute;
+color:red;
+font-size:20px;
+animation: float 6s linear infinite;
+}
+
+@keyframes float{
+0%{transform:translateY(100vh);}
+100%{transform:translateY(-10vh);}
+}
+
+.box{
+background:white;
+padding:50px;
+border-radius:20px;
+text-align:center;
+width:500px;
+box-shadow:0 20px 60px rgba(0,0,0,.3);
+}
+
+button{
+padding:15px 30px;
+font-size:18px;
+border:none;
+border-radius:10px;
+background:#ff4d6d;
+color:white;
+cursor:pointer;
+}
+
+button:hover{
+transform:scale(1.1);
+}
+
+.carta{
+display:none;
+margin-top:20px;
+font-size:20px;
+color:#333;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="box">
+
+<h1>Para ti ❤️</h1>
+
+<button onclick="mostrarCarta()">
+Ábrelo mi amor
+</button>
+
+<div class="carta" id="carta">
+Josue... ❤️<br><br>
+
+Desde que llegaste a mi vida todo se siente diferente.<br>
+Eres mi casualidad favorita,<br>
+mi lugar seguro,<br>
+y la persona con la que quiero estar siempre.<br><br>
+
+No importa la distancia,<br>
+mi corazón siempre encuentra el camino hacia ti.<br><br>
+
+Te amo muchísimo ❤️
+</div>
+
+</div>
+
+<script>
+
+function mostrarCarta(){
+document.getElementById("carta").style.display="block";
+}
+
+/* corazones */
+
+setInterval(()=>{
+let heart=document.createElement("div");
+heart.innerHTML="❤️";
+heart.className="heart";
+heart.style.left=Math.random()*100+"vw";
+heart.style.fontSize=(Math.random()*20+10)+"px";
+
+document.body.appendChild(heart);
+
+setTimeout(()=>{
+heart.remove();
+},6000);
+
+},500);
+
+</script>
+
+</body>
+</html>
